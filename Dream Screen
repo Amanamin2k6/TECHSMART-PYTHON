@@ -1,0 +1,67 @@
+"""
+Graphics
+Coding Exercise: Graphics
+Dream Screen
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+import tsapp
+
+
+## -- Window -- ##
+
+window = tsapp.GraphicsWindow()
+
+
+## -- Constants -- ##
+
+
+
+#### ---- BACKGROUND AND TITLE ---- ####
+
+## -- Background -- ##
+background = tsapp.Sprite("AcademyCastle.jpg", 0, 0)
+window.add_object(background)
+
+
+## -- Title -- ##
+title = tsapp.TextLabel("PrincessSofia-Regular.ttf", 75, 0, 150, window.width, "Castle Defense ", tsapp.MAGENTA)
+title.align = "center"
+window.add_object(title)
+
+#### ---- BUTTONS AND ICONS ---- ####
+
+## -- First button -- ##
+first = tsapp.TextLabel("PrincessSofia-Regular.ttf", 50, 375, 250, window.width, "new game", tsapp.WHITE)
+window.add_object(first)
+
+## -- Second button -- ##
+second = tsapp.TextLabel("PrincessSofia-Regular.ttf", 50, 375, 350, window.width, "load game", tsapp.WHITE)
+window.add_object(second)
+
+#### ---- OTHER GRAPHICS ---- ####
+
+## -- Additional pictures -- ##
+princess = tsapp.Sprite("Princess.png", 100, 100)
+princess.scale = .75
+window.add_object(princess)
+first_logo = tsapp.Sprite("OrbCyan.png",275, 175)
+first_logo.scale = .25
+second_logo = tsapp.Sprite("OrbPeach.png",275,275)
+second_logo.scale = .25
+window.add_object(first_logo)
+window.add_object(second_logo)
+treasure = tsapp.Sprite("TreasureChestTopAngle.png", 600, 100)
+treasure.scale = .2
+window.add_object(treasure)
+## -- Additional text -- ##
+text1 = tsapp.TextLabel("CourierPrimeCode-Regular.ttf",25, 600, 350, window.width, "Reviews:", tsapp.WHITE)
+window.add_object(text1)
+text2 = tsapp.TextLabel("CourierPrimeCode-Regular.ttf",25, 600, 375, window.width, "Fun!", tsapp.WHITE)
+window.add_object(text2)
+#### ---- MAIN LOOP ---- ####
+while window.is_running:
+    window.finish_frame()
+
