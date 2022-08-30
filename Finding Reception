@@ -1,0 +1,76 @@
+"""
+Tuples
+Coding Exercise: Tuples
+Finding Reception
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+import tsapp
+import ts_reception
+
+window = tsapp.GraphicsWindow()
+## -- Background -- ##
+bg = tsapp.Sprite("CityGrid.jpg", 0, 0)
+window.add_object(bg)
+
+## -- Towers -- ##
+tower1 = tsapp.Sprite("Antenna.png", 100,200)
+tower2 = tsapp.Sprite("Antenna.png", 500,200)
+tower3 = tsapp.Sprite("Antenna.png", 900,200)
+
+ALL_TOWERS = (tower1, tower2, tower3)
+POWER = (200, 400, 600)
+
+for tower in ALL_TOWERS:
+    window.add_object(tower)
+
+
+## -- Character -- ##
+character = tsapp.Sprite("FigureWithCellPhone.png", 100, 100)
+window.add_object(character)
+signal = ("CellSignalLow.png" ,
+          "CellSignalLowMedium.png",
+          "CellSignalMedium.png",
+          "CellSignalMediumHigh.png",
+          "CellSignalHigh.png")
+signal_sprite = tsapp.Sprite(signal[0], 0, 0)
+window.add_object(signal_sprite)
+
+
+## -- Instructions -- ##
+print("Different towers have different signal strengths.\nYou may have to move around to find the best signal.")
+
+
+#### ---- MAIN LOOP ---- ####
+while window.is_running:
+
+
+    ## -- Character follows mouse -- ##
+    x, y = tsapp.get_mouse_position()
+    character.center = x, y
+
+
+    ## -- Scores -- ##
+    tower_active, signal_level = ts_reception.find_best_reception(ALL_TOWERS, POWER, character)
+
+
+    ## -- Tower image -- ##
+    for tower in ALL_TOWERS:
+        if tower_active == tower:
+            tower_active.image = "AntennaHighlighted.png"
+        else:
+            tower.image = "Antenna.png"
+
+
+    ## -- Signal image -- ##
+    signal_sprite.x = character.x
+    signal_sprite.y = character.y - 30
+    if signal_level < 5:
+        signal_sprite.image = signal[signal_level]
+
+
+    ## -- Frame -- ##
+    window.finish_frame()
+
