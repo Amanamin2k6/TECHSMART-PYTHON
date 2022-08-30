@@ -1,0 +1,30 @@
+"""
+Statements and Variables
+Instruction Practice: Comments
+Dog Details
+Tommy loves to play fetch and eat choclate.
+
+"""
+
+#### ---- IMAGE OUTPUT ---- ####
+
+## -- START OF HEAD -- ##
+print("    ___  ")
+print(" __/ / \ ")
+print("|    |/\ ")
+print("|_--\   \              /^==~ ")
+## -- START OF BODY -- ##
+
+print("     \   \-___________/ /  ")
+print("      \                : ")
+print("      |                : ")
+print("      |       ___ \    ) ")
+print("       \|  __/     \  )  ")
+## -- START OF LEGS -- ##
+
+print("        | /         \  \ ")
+print("        | }          ( ( ")
+print("        ||           \ | ")
+print("        ||            || ")
+print("       / )           / ) ")
+print("       --/           --/  ")
