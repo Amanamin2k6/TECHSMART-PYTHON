@@ -1,0 +1,54 @@
+"""
+List Operations
+Technique Practice: Filter a List
+Blocked
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+
+import ts_social_media
+
+## -- Lists -- ##
+people = ["Kaori", "Siti", "Fang", "Jun", "Hwan", "Batu"]
+posts, authors = ts_social_media.get_posts(people, 15)
+
+## -- User input -- ##
+print("Please enter the name of the person you are blocking: ")
+for person in people:
+    print("   " + person)
+print()
+blocked = input("Name: ")
+print()
+num_blocked = 0
+
+#### ---- FILTER ---- ####
+
+## -- New lists -- ##
+new_posts = []
+new_authors = []
+
+## -- Skip blocked posts -- ##
+for i in range (len(posts)):
+    if authors[i] != blocked:
+        new_posts.append(posts[i])
+        new_authors.append(authors[i])
+    else:
+        num_blocked += 1
+
+
+
+
+## -- Re-assign lists -- ##
+posts = new_posts
+authors = new_authors
+
+
+#### ---- OUTPUT ---- ####
+
+for i in range(len(posts)):
+    print(posts[i])
+    print("      - " + authors[i])
+    print()
+print(str(num_blocked) + " posts by " + blocked + " have been blocked based on your settings.")
