@@ -1,0 +1,22 @@
+"""
+Expressions
+Technique Practice: Increment a String
+Invent-a-Word
+"""
+
+#### ---- SETUP ---- ####
+import ts_grammar
+word = ""
+print("Generating word...")
+print()
+
+#### ---- BUILD WORD ---- ####
+word += ts_grammar.get_syllable(1)
+word += ts_grammar.get_syllable(3)
+word += ts_grammar.get_syllable(5)
+word += ts_grammar.get_syllable(4)
+#### ---- OUTPUT WORD ---- ####
+print("Your word is: ")
+print(word)
+print()
+print("What a great word! Now you just need to define it.")
