@@ -1,0 +1,29 @@
+"""
+For-Range Loops
+Instruction Practice: Custom Ranges
+Ants Go Marching
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+
+import tsapp
+
+## -- Window -- ##
+
+window = tsapp.GraphicsWindow()
+background = tsapp.Sprite("FantasyPlainsWithPath.jpg", 0, 0)
+window.add_object(background)
+
+## -- Ants -- ##
+for i in range(-50, 950, 50):
+    ant = tsapp.Sprite("AntRed.png", i, 275)
+    ant.scale = .3
+    window.add_object(ant)
+
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+    window.finish_frame()
