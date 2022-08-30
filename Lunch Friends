@@ -1,0 +1,50 @@
+"""
+Tuples
+Coding Exercise: Tuples
+Lunch Friends
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+import ts_lunch
+
+
+## -- Introduction -- ##
+print("Welcome to Lunch Friends!")
+print()
+quit = False
+#### ---- OUTPUT ---- ####
+
+## -- Main Loop -- ##
+while not quit:
+
+
+    ## -- Friends refresh -- ##
+    friends = ts_lunch.get_friends()
+    friends_count = len(friends)
+    print("You have " + str(friends_count) + " friends currently at lunch: ")
+    print()
+    ## -- Friends list -- ##
+    friends_list = list(friends)
+    friends_list.sort()
+    for i in friends_list:
+        print("\t" + i)
+
+    print()
+    ## -- Friend selection -- ##
+    friend = input("Enter the name of a friend at lunch for more information: ")
+    while friend not in friends:
+            friend = input("Enter the name of a friend at lunch for more information: ")
+
+    print()
+    ## -- Friend information display -- ##
+    friend_name, friend_time, friend_seat = ts_lunch.get_friend(friend)
+    print("Friend: " + friend_name)
+    print("Time at lunch: " + str(friend_time)  + " min")
+    print("Table: " + str(friend_seat))
+    
+    quit = input("Press Enter to refresh the list of friends, or \"quit\" to quit: ") == "quit"
+
+
+
