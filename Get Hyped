@@ -1,0 +1,30 @@
+"""
+String Operations
+Instruction Practice: String Methods
+Get Hyped
+"""
+
+#### ---- INPUT ---- ####
+
+phrase = input("Enter a sentence to make more exciting: ")
+
+#### ---- STRING CHANGES ---- ####
+## -- Capitalization -- ##
+words = phrase.split()
+for i in words:
+    if len(i) > 4:
+        new = i.upper()
+        words[words.index(i)] = new
+
+
+
+sentence = " ".join(words)
+
+
+## -- Punctuation -- ##
+sentence = sentence.replace(".", "!")
+
+
+#### ---- OUTPUT ---- ####
+
+print(sentence)
