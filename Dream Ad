@@ -1,0 +1,66 @@
+"""
+Animation
+Coding Exercise: Animation
+Dream Ad
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+import tsapp
+import random
+
+## -- Constants -- ##
+frame = 0
+
+
+#### ---- GRAPHICS ---- ####
+
+## -- Window -- ##
+window = tsapp.GraphicsWindow()
+
+
+## -- Sprites -- ##
+bg = tsapp.Sprite("Stage.png",0,0)
+tech = tsapp.Sprite("RobotBird.png",450,250)
+platform = tsapp.Sprite("TechPedestal.png", 339,400)
+ball = tsapp.Sprite("ExhibitRobotsaur.png", 0,0)
+ball.center_x = window.center_x
+ball.center_y = window.center_y
+ball.x_speed = random.randint(300, 500)
+ball.y_speed = random.randint(150, 250)
+window.add_object(bg)
+window.add_object(platform)
+window.add_object(tech)
+window.add_object(ball)
+
+## -- Text -- ##
+text = tsapp.TextLabel("BigelowRules-Regular.ttf", 100, platform.center_x - 50, platform.center_y + 30, window.width, "thing", tsapp.BLACK )
+text.aling = "center"
+window.add_object(text)
+
+
+#### ---- MAIN LOOP ---- ####
+while window.is_running:
+
+    ## -- First change -- ##
+    if frame == 50:
+        rain = tsapp.Sprite("RainMachine.png",400,200)
+        window.add_object(rain)
+
+
+    ## -- Second change -- ##
+    if frame == 60:
+        rain.destroy()
+        tech.image = random.choice(["RobotButler.png", "RobotBird.png"])
+        frame = 0
+
+    ## -- Third change -- ##
+    if ball.y <= 0 or ball.y >= window.height - ball.height:
+        ball.y_speed *= -1
+    if ball.x <= 0 or ball.x >= window.width - ball.width:
+        ball.x_speed *= -1
+    ## -- Finish frame -- ##
+    window.finish_frame()
+    frame += 1
+
