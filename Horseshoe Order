@@ -1,0 +1,19 @@
+"""
+Values
+Instruction Practice: Variables and Operators
+Horseshoe Order
+"""
+
+#### ---- VARIABLE SETUP ---- ####
+
+horses = 15
+
+#### ---- HORSESHOE CALCULATION ---- ####
+
+horse_shoes = horses*4
+
+#### ---- OUTPUT RESULTS ---- ####
+print("Horses:")
+print(horses)
+print("Shoes Needed:")
+print(horse_shoes)
