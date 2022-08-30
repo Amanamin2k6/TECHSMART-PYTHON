@@ -1,0 +1,24 @@
+"""
+Libraries
+Coding Exercise: Function Calls
+Marine Maze
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Imports -- ##
+import ts_sea
+
+
+## -- Background and objects -- ##
+ts_sea.draw_ocean()
+
+
+#### ---- MOVE THROUGH MAZE ---- ####
+ts_sea.move_ship_right("7")
+ts_sea.move_ship_down("3")
+ts_sea.move_ship_right("3")
+
+#### ---- FINISH ---- ####
+
+ts_sea.take_picture()
