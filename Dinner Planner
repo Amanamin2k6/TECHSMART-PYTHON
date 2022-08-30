@@ -1,0 +1,26 @@
+"""
+Libraries
+Instruction Practice: Libraries
+Dinner Planner
+"""
+
+#### ---- LIBRARY SETUP ---- ####
+
+import ts_food_randomizer
+
+#### ---- INPUT ---- ####
+
+item1 = input("Add a food you like to eat: ")
+item2 = input("Add an additional food you like to eat: ")
+item3 = input("Let's add another food: ")
+item4 = input("One last food you enjoy: ")
+
+#### ---- CALCULATIONS ---- ####
+ts_food_randomizer.add_food(item1)
+ts_food_randomizer.add_food(item2)
+ts_food_randomizer.add_food(item3)
+ts_food_randomizer.add_food(item4)
+
+
+#### ---- OUTPUT ---- ####
+ts_food_randomizer.pick_dinner()
