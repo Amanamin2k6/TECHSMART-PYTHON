@@ -1,0 +1,23 @@
+"""
+Lists and For-Each Loops
+Technique Demo: Iterate a List with For-Range
+Spy Names
+"""
+
+#### ---- SETUP ---- ####
+
+import random
+
+crew = ["Adam", "Amir", "Zoe", "Marissa", "Rene"]
+nicknames = ["Moonlight", "Cardinal", "Snakebite", "Ranger", "Moose", "Silence", "Eagle", "Director", "Watcher"]
+
+#### ---- LOOP ---- ####
+
+for i in range (len(crew)):
+    crew[i] = nicknames[i]
+
+#### ---- OUTPUT ---- ####
+
+print("A list of agents on this mission: ")
+for name in crew:
+    print(name)
