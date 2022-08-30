@@ -1,0 +1,19 @@
+"""
+Strings as Collections
+Instruction Practice: String Slicing
+International Numbers
+"""
+
+#### ---- SETUP ---- ####
+
+phone_numbers = ["+1 709 239 5000", "+49 151 123 456", "+64 21 202 4961", "+679 324 4362", "+1 834 721 4975", "+1 257 534 2131", "+49 764 756 242", "+679 444 0193", "+49 555 555 5555"]
+country_code = input("Search your international contacts by country code: ")
+
+#### ---- CONTACT SEARCH ---- ####
+for number in phone_numbers:
+    if country_code == number[1:number.index(" ")]:
+        print(number)
+
+
+
+
