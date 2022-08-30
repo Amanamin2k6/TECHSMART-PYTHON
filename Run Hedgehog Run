@@ -1,0 +1,41 @@
+"""
+Animation
+Technique Practice: Change Image
+Run Hedgehog Run
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+
+import tsapp
+
+## -- Window and Sprites -- ##
+
+window = tsapp.GraphicsWindow()
+background = tsapp.Sprite("FantasyPlainsWithPath.jpg", 0, 0)
+hedgehog = tsapp.Sprite("HedgehogRunPose.png", 50, 180)
+window.add_object(background)
+window.add_object(hedgehog)
+
+#### ---- MAIN LOOP ---- ####
+
+frame = 0
+while window.is_running:
+
+    ## -- Change hedgehog image and speed -- ##
+    if frame == 50:
+        hedgehog.image = "HedgehogRunSheet.png"
+        hedgehog.x_speed = 50
+
+    ## -- Update frame variable -- ##
+
+    frame += 1
+    if frame == 100:
+        frame = 0
+        hedgehog.image = "HedgehogRunPose.png"
+        hedgehog.x_speed = 0
+
+    ## -- Finish frame -- ##
+
+    window.finish_frame()
