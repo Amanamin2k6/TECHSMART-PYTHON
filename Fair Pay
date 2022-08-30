@@ -1,0 +1,23 @@
+"""
+Conditionals (if)
+Technique Practice: Limit Number
+Fair Pay
+"""
+
+#### ---- ALLOWANCE INPUT ---- ####
+
+allowance = int(input("How much allowance do you feel you earned this week? $"))
+print()
+
+#### ---- LIMIT ALLOWANCE ---- ####
+if allowance > 30:
+    print("The max is 30")
+    allowance = 30
+if allowance < 5:
+    print("you are modest!")
+    allowance = 5
+
+
+#### ---- OUTPUT ---- ####
+
+print("Okay, your allowance will be $" + str(allowance) + " this week.")
