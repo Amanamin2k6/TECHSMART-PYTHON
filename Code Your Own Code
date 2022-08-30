@@ -1,0 +1,48 @@
+"""
+[Insert Name]
+Computer Science 1
+Coda
+"""
+
+
+print("Welcome, I am your Personal Assistant, Coda!")
+name=input("What is your name? ")
+print("Hi " + name + " nice to meet you!")
+print()
+
+while True:
+    print("Here is what I can do!")
+    print("Math, Story Time, or Quote")
+    task = input("What would you like me to do? ")
+    
+    if task == "Story Time":
+        print("One day, a fox became very hungry as he went to search for some food. He searched high")
+        print("and low, but couldn't find something that he could eat.")
+        print()
+        print("Finally, as his stomach rumbled, he stumbled upon a farmer's wall. At the top of the wall, he saw the biggest, juiciest grapes he'd ever seen. They had a rich, purple color, telling the fox they were ready to be eaten.")
+        print()
+        print("To reach the grapes, the fox had to jump high in the air. As he jumped, he opened his mouth to catch the grapes, but he missed. The fox tried again but missed yet again.")
+        print()
+        print("He tried a few more times but kept failing.")
+        print()
+        print("Finally, the fox decided it was time to give up and go home. While he walked away, he muttered, I'm sure the grapes were sour anyway.")
+    if task== "Quote":
+        print("Be yourself; everyone else is already taken.")
+        print("― Oscar Wilde")
+    if task == "Math":
+        number1 = int(input("What is the first number you would like to add? "))
+        number2 = int(input("What is the second number you would like to add? "))
+        number1 += number2
+        print("Your answer is " + str(number1))
+    check= input("Do you want to quit or start again? enter Y to restart or another key to end: ")
+
+    if check.upper() == "Y": 
+        continue    
+    print("Thank You, " + name + " come back again!")
+    break
+
+
+
+
+
+
