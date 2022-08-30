@@ -1,0 +1,35 @@
+"""
+Graphics
+Instruction Practice: Text
+Creative Caption
+"""
+
+#### ---- WINDOW SETUP ---- ####
+
+import tsapp
+window = tsapp.GraphicsWindow()
+
+#### ---- SPRITE SETUP ---- ####
+
+background = tsapp.Sprite("Stage.png", 0, 0)
+character1 = tsapp.Sprite("PandaGentleman.png", 50, 0)
+character2 = tsapp.Sprite("PugBee.png", 450, 200)
+character3 = tsapp.Sprite("Aristocat.png", 750, 200)
+dialogue_box = tsapp.Sprite("DialogueBoxBrown.png", 0, 425)
+
+#### ---- SCENE CREATION ---- ####
+
+window.add_object(background)
+window.add_object(character1)
+window.add_object(character2)
+window.add_object(character3)
+window.add_object(dialogue_box)
+
+#### ---- TEXT CREATION ---- ####
+text = tsapp.TextLabel("Archivo-Medium.ttf", 125, 75, 550, 1800, "Panda Express", tsapp.WHITE)
+window.add_object(text)
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+    window.finish_frame()
