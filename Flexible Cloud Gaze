@@ -1,0 +1,30 @@
+"""
+Booleans
+Technique Practice: Flexible Input
+Flexible Cloud Gaze
+"""
+
+#### ---- SETUP ---- ####
+
+import ts_window
+
+#### ---- WINDOW SHAPE INPUT ---- ####
+
+answer = input("Which shaped window would you like to look out to see the clouds?  Choices are rectangle, circle or triangle: ")
+
+#### ---- WINDOW OUTPUT ---- ####
+
+## -- Variations of rectangle -- ##
+if answer == "rectangle" or answer == "Rectangle" or answer == "RECTANGLE":
+    ts_window.show_rectangle()
+
+
+## -- Variations of circle -- ##
+elif answer == "circle" or answer == "CIRCLE" or answer == "Circle":
+    ts_window.show_circle()
+
+
+## -- Variations of triangle -- ##
+elif answer == "triangle" or answer == "Triangle" or answer == "TRIANGLE":
+    ts_window.show_triangle()
+
