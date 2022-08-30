@@ -1,0 +1,26 @@
+"""
+List Operations
+Technique Demo: Filter a List
+Game Matchmaker
+"""
+
+#### ---- SETUP ---- ####
+
+player_scores = [1100, 540, 300, 650, 760, 1500, 1800, 200, 100, 800]
+good_scores = []
+print("Searching for players with scores between 500 and 1000...")
+
+
+#### ---- FILTER LOOP ---- ####
+
+
+for score in player_scores:
+    if score >= 500 and score <= 1000:
+        good_scores.append(score)
+
+
+#### ---- FINAL OUTPUT ---- ####
+
+print()
+print("Found players that match your level:")
+print(good_scores)
