@@ -1,0 +1,49 @@
+"""
+Built-In Libraries
+Coding Exercise: Randomness
+Abstract Art Bot
+"""
+
+#### ---- SETUP ---- ####
+import ts_artist
+import random
+
+colors = ("red", "blue", "green", "purple", "orange", "grey")
+colors = random.choice(colors)
+shapes = ("circle", "triangle", "rectangle")
+shapes = random.choice(shapes)
+number = random.randint(10,50)
+size = random.randint(2,30)
+
+#### ---- RANDOM ART ---- ####
+
+## -- Random color -- ##
+ts_artist.set_color(colors)
+
+## -- Random shape -- ##
+ts_artist.draw_shapes(shapes, size, number)
+
+
+## -- Random number and size -- ##
+
+
+
+#### ---- RANDOM TITLE ---- ####
+
+## -- Random adjective -- ##
+first_word= random.randint(1,2)
+if first_word == 1:
+    first_word = (colors + " ")
+else: 
+    first_word = (shapes + " ")
+
+
+## -- Random noun -- ##
+second_word = "Motion","Society","Joy","(Untitled)"
+second_word = random.choice(second_word)
+
+
+ts_artist.write_title(first_word + second_word)
+#### ---- DRAW ---- ####
+ts_artist.show()
+
