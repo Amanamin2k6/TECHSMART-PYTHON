@@ -1,0 +1,20 @@
+"""
+Statements and Variables
+Instruction Practice: Fixing Errors
+Debug Statements
+"""
+
+
+print ("Debugging code isn't always fun")  
+
+
+print ("but it's needed to make this program run")
+
+
+print ("Fix the errors, mistakes will happen")
+
+
+print("Then you'll be able to code with passion")
+
+
+# --> TURN-IN YOUR CODE <-- #
