@@ -1,0 +1,55 @@
+"""
+Graphics
+Technique Practice: Draw Order
+Hide and Seek
+"""
+
+#### ---- WINDOW SETUP ---- ####
+
+import tsapp
+import ts_hide
+window = tsapp.GraphicsWindow()
+
+#### ---- SPRITE SETUP ---- ####
+
+background = tsapp.Sprite("FantasyPlains.jpg", 0, 0)
+rock = tsapp.Sprite("BigMossyRock.png", 600, 200)
+tree = tsapp.Sprite("BluePineTree.png", 100, 300)
+bush = tsapp.Sprite("Bush.png", 200, 100)
+ts_hide.create_scene(window, rock, tree, bush)
+animal_behind_rock = ts_hide.random_animal("rock")
+animal_behind_tree = ts_hide.random_animal("tree")
+animal_behind_bush = ts_hide.random_animal("bush")
+
+#### ---- SCENE CREATION ---- ####
+
+ts_hide.add_objects(window, background, animal_behind_rock, animal_behind_tree, animal_behind_bush, rock, tree, bush)
+
+#### ---- MAIN LOOP ---- ####
+
+frame = 0
+while window.is_running:
+    frame += 1
+    if frame % 30 == 0:
+        check = input("Pick a sprite to look behind (rock, tree, bush): ")
+
+        ## -- Search logic -- ##
+        if check == "rock":
+            print("Checking behind rock")
+            window.move_to_front(animal_behind_rock)
+
+
+        if check == "bush":
+            print("Checking behind bush")
+            window.move_to_front(animal_behind_bush)
+
+        if check == "tree":
+            print("Checking behind tree")
+            window.move_to_front(animal_behind_tree)
+
+
+        if ts_hide.cat_found(window):
+            print("You found the cat!")
+            window.is_running = False
+
+    window.finish_frame()
