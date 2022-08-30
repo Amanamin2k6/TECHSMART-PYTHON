@@ -1,0 +1,94 @@
+"""
+Booleans
+Coding Exercise: Booleans
+Auto Troubleshooter
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+import ts_machine
+
+
+## -- Intro -- ##
+ts_machine.draw_machine_broken()
+print("Welcome to the Pangeleon 2000 Troubleshooter.")
+print("It seems like you're having some trouble with the Pangeleon 2000.")
+print("Please use the following checklist to help us determine the problem.")
+input("(Press enter to continue)")
+
+#### ---- TESTING ---- ####
+
+## -- Bird case -- ##
+answer = input("Is there a bird on it? ")
+
+if answer == "yes" or answer == "y":
+    bird = True
+else:
+    bird = False
+if bird == False:
+    answer = input("Is there static on the screen? ")
+    if answer == "y" or  answer == "yes":
+        static = True
+    else:
+        static = False
+        
+    answer = input("Is the light red or blue? ")
+    if answer == "red" or answer == "Red":
+        light = True
+    else:
+        light = False
+        
+    answer = input("What temperature is on the gauge? ")
+    if answer > 70:
+        temp = True
+    else:
+        temp = False
+
+
+
+    
+
+    
+
+#### ---- RESULTS ---- ####
+print("The machine is doing a routine diagnostic.")
+print("Wait patiently and this issue will fix itself.")
+input ("(Hit enter to perform this suggestion.)")
+if bird:
+    print("Well, there's your problem right there!")
+    print("Get that bird off it!")
+elif static and light and temp:
+    print("The machine does not trust you.")
+    print("Feed and pet the machine regularly over the nest week to earn its trust.")
+elif light and static:
+    print("These issues mean that your machine has detected a spy. ")
+    print("Discover who the spy is and remove them from the premises. ")
+elif light and temp:
+    print("The machine is on fire. ")
+    print("Please put out the fire. ")
+elif temp and static:
+    print("The machine is trying to process too much data at once. ")
+    print("Remove the processing filter and refill the algorithm coolant reservoir. ")
+elif static or light or temp:
+    print("The machine is doing a routine diagnostic. ")
+    print("Wait patiently and this issue will fix itself. ")
+else:
+    print("There is nothing wrong with the machine! ")
+    print("Please continue with normal use. ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### ---- OUTRO ---- ####
+ts_machine.draw_machine_working()
+
