@@ -1,0 +1,28 @@
+"""
+Lists and For-Each Loops
+Technique Practice: Iterate a List with For-Range
+Shop Rainbow
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Background and window -- ##
+
+import tsapp
+window = tsapp.GraphicsWindow()
+bg = tsapp.Sprite("WoodenRoomWithShelves.png", 0, 0)
+window.add_object(bg)
+
+## -- Potion list -- ##
+
+images = ["PotionRed.png", "PotionOrange.png", "PotionYellow.png", "PotionGreen.png", "PotionBlue.png", "PotionIndigo.png", "PotionViolet.png"]
+
+## -- Potion placement -- ##
+for i in range(len(images)):
+    sprite = tsapp.Sprite(images[i], i * 125 + 80, 133)
+    window.add_object(sprite)
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+    window.finish_frame()
