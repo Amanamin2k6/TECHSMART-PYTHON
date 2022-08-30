@@ -1,0 +1,36 @@
+"""
+List Operations
+Instruction Practice: List Changes
+Featured Review
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+
+import ts_reviews
+
+## -- List -- ##
+
+reviews = ["Good", "It sounds okay, but it looks really cool!", "My neighbors keep asking me to turn down the volume", "Good enough", "Product never arrived", "I dropped it in the bath and it broke", "This speaker makes me feel like I'm seeing my favorite bands live!", "It plays music alright"]
+
+#### ---- CHOICE ---- ####
+
+## -- Loop -- ##
+
+for i in range(len(reviews)):
+    print("Review #" + str(i + 1) + ": " + reviews[i])
+print()
+
+## -- Selection -- ##
+user = int(input("Which speaker review would you like to feature on your website? Enter the number: ")) -1
+reviews.insert(0, reviews[user])
+
+
+## -- List update -- ##
+del reviews[user + 1 ]
+
+
+#### ---- OUTPUT ---- ####
+
+ts_reviews.print_reviews(reviews)
