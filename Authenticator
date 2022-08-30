@@ -1,0 +1,23 @@
+"""
+Booleans
+Instruction Practice: Booleans
+Authenticator
+"""
+
+#### ---- INPUT ---- ####
+
+print("Welcome to our secure 2-step login process.")
+print("After entering your password, you will be sent an authentication code to verify your identity")
+print()
+password = input("Please enter your password: ")
+print("Sending authentication code to phone number associated with your account.")
+auth_code = input("Please enter your unique authentication code: ")
+print()
+
+#### ---- LOGIN ATTEMPT ---- ####
+logina = password == "code"
+loginb = auth_code == "1234"
+if logina == True and loginb == True:
+    print("Successful login!")
+else:
+    print("Unsuccessful!")
