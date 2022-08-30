@@ -1,0 +1,64 @@
+"""
+While Loops
+Coding Exercise: While Loops
+Forest Frenzy
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+import ts_endless_runner
+
+
+## -- Variables -- ##
+attempt = 1
+replay = True
+
+#### ---- GAME LOOP ---- ####
+
+## -- Loop -- ##
+while replay:
+
+
+    ## -- Instructions -- ##
+    print("Avoid obstacles by using the Space key to jump!")
+
+
+    ## -- Difficulty level -- ##
+    difficulty = int(input("What is the difficulty you would like to play at? 1-5 "))
+
+    
+    
+    ## -- Game -- ##
+    print("Press Space to wake up the hedgehog and start running.")
+    if difficulty == 5:
+        ts_endless_runner.play(750)
+    elif difficulty == 4:
+        ts_endless_runner.play(600)
+    elif difficulty == 3:
+        ts_endless_runner.play(450)
+    elif difficulty == 2:
+        ts_endless_runner.play(300)
+    elif difficulty == 1:
+        ts_endless_runner.play(150)
+    distance = ts_endless_runner.get_distance()
+    print("Attempt " + str(attempt) + ": You ran " + str(distance) + " meters.")
+
+
+
+    ## -- Replay input -- ##
+    again = input("Do you want to play again? y/n")
+
+
+    ## -- Replay logic -- ##
+    if again == "y":
+        attempt += 1
+        print()
+        print()
+    else:
+        replay = False
+        
+
+
+
+
