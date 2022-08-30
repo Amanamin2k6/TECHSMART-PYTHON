@@ -1,0 +1,39 @@
+"""
+Animation
+Technique Practice: Change Image
+Far Out Workout
+"""
+
+#### ---- SETUP ---- ####
+
+import random
+import tsapp
+window = tsapp.GraphicsWindow()
+
+#### ---- SPRITES ---- ####
+
+background = tsapp.Sprite("SpacePlanet.jpg", 0, 0)
+astronaut = tsapp.Sprite("AstronautStand.png", 350, 270)
+window.add_object(background)
+window.add_object(astronaut)
+
+#### ---- MAIN LOOP ---- ####
+
+frame = 1
+while window.is_running:
+
+    ## -- Change astronaut image -- ##
+
+    if frame > 30 and frame % 5 == 0:
+        astronaut.image = random.choice(["AstronautWalk.png", "AstronautKick.png", "AstronautLift.png"])
+       
+
+
+
+
+
+
+
+
+    frame += 1
+    window.finish_frame()
