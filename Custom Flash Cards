@@ -1,0 +1,59 @@
+"""
+Dictionaries
+Coding Exercise: Dictionaries
+Custom Flash Cards
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+import tsapp
+import ts_parser
+import random
+
+## -- Flash card dictionary -- ##
+flashcards = {}
+file = ts_parser.load_string("flash_cards.txt").split("\n")
+for card in file:
+    flashcards[card.split(": ")[0]] = card.split(": ")[1]
+
+
+
+
+
+
+## -- Graphics -- ##
+window = tsapp.GraphicsWindow(600,600, tsapp.BLACK)
+
+card = random.choice(list(flashcards.keys()))
+sprite = tsapp.Sprite(card, 0,0)
+sprite.center = window.center
+window.add_object(sprite)
+#### ---- MAIN LOOP ---- ####
+while window.is_running:
+
+
+    ## -- Random card display -- ##
+    card = random.choice(list(flashcards.keys()))
+    sprite.image = card
+    window.finish_frame()
+
+    ## -- Guess and response -- ##
+    user = input("What is this picture? (or type \"exit\" to quit) ")
+    print()
+    
+    if user == flashcards[card]:
+        print("correct")
+    elif user == "exit":
+        break
+    else:
+        print("The correct answer was " + flashcards[card])
+    print()
+    print()
+    print()
+
+
+
+
+
+
