@@ -1,0 +1,42 @@
+"""
+Controlling Loops
+Coding Exercise: Controlling Loops
+Bowl Builder
+"""
+
+#### ---- SETUP ---- ####
+import ts_burrito
+
+print("Welcome to Bowl Builder!")
+print("Let's add ingredients to your burrito bowl order.")
+
+#### ---- PAGES ---- ####
+
+## -- Loop setup -- ##
+total_page = ts_burrito.get_page_count()
+page = 1
+
+## -- Page loop -- ##
+while page <= total_page:
+
+
+    ## -- Page display -- ##
+    ts_burrito.show_page(page)
+    page += 1
+
+    ## -- Cancel order -- ##
+    if ts_burrito.clicked_cancel():
+        print("Your order was cancelled")
+        break
+    ## -- Add or skip choice -- ##
+    if ts_burrito.clicked_skip():
+        continue
+    ingredient = ts_burrito.get_choice()
+    ts_burrito.show_ingredient(ingredient)
+
+
+
+## -- Complete order -- ##
+else:
+    ts_burrito.show_final_order
+    print("Thanks for ordering with us!")
