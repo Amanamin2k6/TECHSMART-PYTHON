@@ -1,0 +1,63 @@
+"""
+For-Range Loops
+Coding Exercise: For-Range Loops
+Match Matchup
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+import tsapp
+import random
+import ts_card
+
+
+## -- Variables -- ##
+TURNS = 10
+matches = 0
+
+
+## -- Window -- ##
+window = tsapp.GraphicsWindow()
+
+bg = tsapp.Sprite("GreenFeltTable.jpg", 0, 0)
+window.add_object(bg)
+## -- Cards -- ##
+for x in range (5):
+    for y in range (4):
+        image = random.randint(0, 4)
+        ts_card.add_card(x*200, y*140, window, image)
+
+
+#### ---- MAIN LOOP ---- ####
+
+## -- Turn loop -- ##
+for i in range (TURNS):
+    print("Turn " + str(i + 1))
+
+
+
+
+    ## -- Window closed -- ##
+    if not window.is_running:
+        break
+
+
+    ## -- Matches -- ##
+    card1, card2 = ts_card.pick_two_cards(window)
+    if card1.image == card2.image:
+        card1.show_match()
+        card2.show_match()
+        print("You found a match!")
+        matches += 1
+
+
+    ## -- Card Reset -- ##
+    print()
+    ts_card.reset_cards()
+
+
+#### ---- FINAL OUTPUT ---- ####
+else:
+    print("You got " + str(matches) + " matches!")
+
