@@ -1,0 +1,21 @@
+"""
+Expressions
+Instruction Practice: Return Values
+Clue Scramble
+"""
+
+#### ---- SETUP ---- ####
+import ts_shuffle
+
+
+#### ---- SENTENCE INPUT ---- ####
+sent=input("Type in a sentence to scramble: " )
+
+
+#### ---- SENTENCE SCRAMBLE ---- ####
+out=ts_shuffle.scramble_sentence(sent)
+
+
+#### ---- NEW SENTENCE OUTPUT ---- ####
+print(out)
+
