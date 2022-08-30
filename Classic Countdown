@@ -1,0 +1,55 @@
+"""
+For-Range Loops
+Instruction Practice: Custom Ranges
+Classic Countdown
+"""
+
+#### ---- SETUP ---- ####
+
+import tsapp
+import ts_timer
+
+## -- SPRITE CREATION -- ##
+
+window = tsapp.GraphicsWindow()
+background = tsapp.Sprite("NightSky.jpg", 0, 0)
+pole = tsapp.Sprite("MetalPost.jpg", 500, 100)
+ball = tsapp.Sprite("MysteryOrb.png", 430, 73)
+balloons1 = tsapp.Sprite("BalloonsBlue.png", 50, 200)
+balloons2 = tsapp.Sprite("BalloonsRed.png", 725, 200)
+countdown_text = tsapp.TextLabel("BlackOpsOne-Regular.ttf", 75, 480, 70, 300, "10", tsapp.YELLOW)
+
+## -- SCENE CREATION -- ##
+
+window.add_object(background)
+window.add_object(pole)
+window.add_object(ball)
+window.add_object(countdown_text)
+
+#### ---- COUNTDOWN ---- ####
+
+## -- Countdown loop -- ##
+for i in range (10,-1, -1):
+    countdown_text.text = str(i)
+    ts_timer.wait_one_second()
+    ball.y = window.height - (i * 50)
+    window.finish_frame()
+    
+    
+    
+
+
+
+
+
+
+## -- Countdown end -- ##
+
+countdown_text.text = "HAPPY NEW YEAR!"
+window.add_object(balloons1)
+window.add_object(balloons2)
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+    window.finish_frame()
