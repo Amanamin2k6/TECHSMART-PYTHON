@@ -1,0 +1,22 @@
+"""
+Conditionals (elif and else)
+Instruction Practice: elif and else
+Color Preview
+"""
+
+#### ---- SETUP ---- ####
+import ts_shading
+
+
+#### ---- INPUT ---- ####
+color = input("What color would you like to see?  Enter r for red or b for blue: ")
+
+
+#### ---- RESULTS ---- ####
+if color == "r":
+    ts_shading.draw_red()
+elif color == "b":
+    ts_shading.draw_blue()
+else:
+    ts_shading.draw_grey()
+
