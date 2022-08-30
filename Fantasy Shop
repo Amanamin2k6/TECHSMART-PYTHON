@@ -1,0 +1,70 @@
+"""
+For-Range Loops
+Coding Exercise: Custom Ranges
+Fantasy Shop
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+import tsapp
+import random
+
+
+## -- Window -- ##
+window = tsapp.GraphicsWindow()
+
+
+## -- Wares -- ##
+bg = tsapp.Sprite("WoodenRoom.png", 0, 0)
+window.add_object(bg)
+shelf = tsapp.Sprite("Shelf.png", 10, 150)
+window.add_object(shelf)
+cat = False
+for i in range(100,1000,100):
+    if random.randint(1,50) == 1 and not cat:
+        cat = True
+        item = tsapp.Sprite("CatTotem.png", i, 0)
+        window.add_object(item)
+    else:
+        potion = random.choice(["PotionCircle.png", "PotionSquare.png", "PotionTriangle.png"])
+        potion = tsapp.Sprite(potion, i, 40)
+        window.add_object(potion)
+
+
+
+
+
+
+
+## -- Shopkeeper -- ##
+ham = tsapp.Sprite("HamsterShopkeeper.png", 20, 200)
+window.add_object(ham)
+
+
+#### ---- MAIN PROGRAM ---- ####
+
+## -- Shop messages -- ##
+print("Welcome to the item shop.")
+print("Press m to view the shop menu.")
+if cat:
+    print("A rare totem is available!")
+
+
+## -- Main loop -- ##
+while window.is_running:
+
+
+
+    ## -- Shop menu -- ##
+    if tsapp.was_key_pressed(tsapp.K_m):
+        print()
+        print()
+        print("Purple Potion:   10g")
+        print("Blue Potion:     50g")
+        print("Orange Potion:  100g")
+        if cat:
+            print("Cat Totem:      500g")
+
+    window.finish_frame()
+
