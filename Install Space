@@ -1,0 +1,18 @@
+"""
+Conditionals (if)
+Instruction Practice: Comparison Operators
+Install Space
+"""
+
+#### ---- FINDING SPACE ---- ####
+import ts_storage
+space = ts_storage.get_free_space()
+print("You have " + str(space) + " MB of free space.")
+
+
+#### ---- CHECKING SPACE ---- ####
+
+if space < 5000:
+    print("Not enough storage! ")
+if space >= 5000:
+    print("progam installing")
