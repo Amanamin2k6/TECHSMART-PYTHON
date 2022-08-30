@@ -1,0 +1,41 @@
+"""
+Tuples
+Instruction Practice: Collection Unpacking
+Click Fade
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+
+import tsapp
+
+## -- Window -- ##
+
+window = tsapp.GraphicsWindow()
+window.background_color = tsapp.RED
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+
+    ## -- Original color -- ##
+    red, green, blue = window.background_color
+
+    ## -- Mouse clicks -- ##
+    if tsapp.was_mouse_pressed():
+        if blue < 240:
+            blue += 20
+            green += 20
+        else:
+            blue = 255
+            green = 255
+
+
+    ## -- New color -- ##
+    window.background_color = red, green, blue
+
+
+    ## -- Finish frame -- ##
+
+    window.finish_frame()
