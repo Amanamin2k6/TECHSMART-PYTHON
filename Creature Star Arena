@@ -1,0 +1,60 @@
+"""
+Expressions
+Coding Exercise: Compound Assignment Operators
+Creature Star Arena
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Imports -- ##
+import ts_battle
+
+
+## -- First draw -- ##
+ts_battle.draw_all()
+
+
+
+
+#### ---- FIRST BATTLE ---- ####
+ts_battle.first_battle()
+
+
+## -- Stamina update -- ##
+stamina = int (ts_battle.get_stamina())
+stamina -= ts_battle.stamina_expended()
+ts_battle.update_stamina(stamina)
+
+
+
+## -- Level update -- ##
+level = ts_battle.get_level()
+level += 1
+ts_battle.update_level(level)
+
+## -- Power update -- ##
+power = ts_battle.get_power()
+power += ts_battle.power_gained()
+ts_battle.update_power(power)
+
+
+#### ---- SECOND BATTLE ---- ####
+ts_battle.second_battle()
+
+
+## -- Stamina update -- ##
+
+stamina -= ts_battle.stamina_expended()
+ts_battle.update_stamina(stamina)
+
+
+## -- Level update -- ##
+
+level += 1
+ts_battle.update_level(level)
+
+
+## -- Power update -- ##
+
+power += ts_battle.power_gained()
+ts_battle.update_power(power)
