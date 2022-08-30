@@ -1,0 +1,33 @@
+"""
+Interaction
+Instruction Practice: Collision
+Dog and Mouse
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+
+import tsapp
+
+## -- Window and Sprites -- ##
+
+window = tsapp.GraphicsWindow()
+background = tsapp.Sprite("LivingRoom.jpg", 0, 0)
+dog = tsapp.Sprite("DogIdle.png", 250, 70)
+dog.scale = 0.6
+window.add_object(background)
+window.add_object(dog)
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+
+    x, y = tsapp.get_mouse_position()
+    if dog.is_colliding_point(x, y):
+        dog.image = "DogHappy.png"
+    else:
+        dog.image = "DogIdle.png"
+
+
+    window.finish_frame()
