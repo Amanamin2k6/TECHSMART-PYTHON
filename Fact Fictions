@@ -1,0 +1,27 @@
+"""
+Libraries
+Instruction Practice: Built-in Libraries
+Fact Fictions
+"""
+
+#### ---- SETUP ---- ####
+
+import random
+invention = ["the shoe", "the mirror", "sugar", "singing"]
+year = 0
+
+#### ---- RANDOM VALUES ---- ####
+
+## -- Integers -- ##
+year = random.randint(1500,1900)
+
+
+
+## -- Strings -- ##
+invention = random.choice(invention)
+
+
+#### ---- OUTPUT ---- ####
+
+print("Did you know that " + invention + " was invented in " + str(year) + "?")
+print("I heard it from my cousin, so it must be true.")
