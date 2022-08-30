@@ -1,0 +1,35 @@
+"""
+Classes
+Instruction Practice: Classes
+Familiar Finder
+"""
+
+#### ---- CLASS SETUP ---- ####
+
+import ts_familiar
+
+
+
+#### ---- CHOICE LOGIC ---- ####
+familiar1 = ts_familiar.Familiar("Jeffery")
+print("Name: " + familiar1.name)
+print("Animal: " + familiar1.animal)
+print("Color: " +familiar1.color)
+print("Temperament: " + familiar1.temperament)
+familiar2 = ts_familiar.Familiar("Bob")
+print("Name: " + familiar2.name)
+print("Animal: " + familiar2.animal)
+print("Color: " +familiar2.color)
+print("Temperament: " + familiar2.temperament)
+print()
+choice = input("Choose a familiar (1 or 2): ")
+print()
+
+if choice == "1":
+    print("You chose familiar 1:")
+    familiar1.print_info()
+
+elif choice == "2":
+    print("You chose familiar 2:")
+    familiar2.print_info()
+
