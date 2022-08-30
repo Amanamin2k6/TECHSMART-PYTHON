@@ -1,0 +1,25 @@
+"""
+Comments and Style
+Coding Exercise: Style
+A Sense of Style
+"""
+# Defining Variables #
+cost = 0
+topping_cost = 2
+# getting size input#
+size = input ("Enter your pizza size (s, m, l): " )
+if size ==    "s":
+    cost = 5
+elif size ==  "m":
+    cost = 10
+elif size ==  "l":
+    cost = 15
+#getting topping information#
+topping = (int(input("How many toppings do you want? ")))
+total_topping_cost = topping * topping_cost
+#getting total cost and printing it#
+cost += total_topping_cost 
+print   ("Your total pizza cost is $"+str(cost))
+
+
+# --> TURN-IN YOUR CODE <-- #
