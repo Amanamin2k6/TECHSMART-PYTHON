@@ -1,0 +1,59 @@
+"""
+List Operations
+Technique Practice: Filter a List
+Fly Swatter
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+
+import tsapp
+import random
+
+## -- Variables -- ##
+
+all_flies = []
+window = tsapp.GraphicsWindow()
+
+## -- Sprites -- ##
+
+background = tsapp.Sprite("TinyYard.jpg", 0, 0)
+remaining = tsapp.TextLabel("Peralta-Regular.ttf", 30, 560, 75, 300, "SCORE: 0", tsapp.WHITE)
+
+window.add_object(background)
+window.add_object(remaining)
+
+for i in range(10):
+    fly = tsapp.Sprite("Fly.png", random.randint(50, 950), random.randint(100,450))
+    window.add_object(fly)
+    all_flies.append(fly)
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+
+    mouse_x, mouse_y = tsapp.get_mouse_position()
+
+    ## -- Fly click check -- ##
+
+    if tsapp.was_mouse_pressed():
+        remaining_flies = []
+
+        ## -- Fly squish logic -- ##
+        for fly in all_flies:
+            if fly.is_colliding_point(mouse_x, mouse_y):
+                fly.destroy()
+            else:
+                remaining_flies.append(fly)
+        all_flies = remaining_flies
+
+
+
+
+
+
+
+    remaining.text = "REMAINING FLIES: " + str(len(all_flies))
+    window.finish_frame()
+
