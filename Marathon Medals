@@ -1,0 +1,19 @@
+"""
+List Operations
+Instruction Practice: Element Queries
+Marathon Medals
+"""
+
+#### ---- MEDAL LISTS ---- ####
+
+mens_golds = ["Greece", "France", "United States", "United States", "South Africa", "Finland", "Finland", "France", "Argentina", "Japan", "Argentina", "Czechoslovakia", "France", "Ethiopia", "Ethiopia", "United States", "East Germany", "East Germany", "Portugal", "Italy", "South Korea", "South Africa", "Ethiopia", "Italy", "Kenya", "Uganda", "Kenya"]
+womens_golds = ["United States", "Portugal", "Russia", "Ethiopia", "Japan", "Japan", "Romania", "Ethiopia", "Kenya"]
+
+#### ---- INPUT ---- ####
+
+country = input("Enter a country: ")
+
+#### ---- OUTPUT ---- ####
+medals = mens_golds.count(country) + womens_golds.count(country)
+print(country + " has won " + str(medals) + " gold medals in the Olympic marathon. ")
+
