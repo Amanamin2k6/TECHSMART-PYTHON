@@ -1,0 +1,29 @@
+"""
+Classes
+Technique Practice: Change an Instance With a Function
+Planting Seeds
+"""
+
+#### ---- SETUP ---- ####
+
+import ts_garden_inventory
+
+## -- Bag of Seeds -- ##
+
+seeds = ts_garden_inventory.Bag("jalapeno")
+print("The bag of " + seeds.kind + " seeds you have has " + str(seeds.amount) + " seeds in it.")
+print()
+
+#### ---- PLANTING SEEDS ---- ####
+while seeds.amount > 0:
+    ts_garden_inventory.plant_seed(seeds)
+    print("You have " + str(seeds.amount)  + " " + seeds.kind +" seeds left.")
+    print()
+    
+
+
+
+
+#### ---- FINAL OUTPUT ---- ####
+
+print("Take good care of those " + seeds.kind + " plants and you will have a great harvest!")
