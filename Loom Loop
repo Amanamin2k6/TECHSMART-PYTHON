@@ -1,0 +1,38 @@
+"""
+While Loops
+Instruction Practice: While Loops
+Loom Loop
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Variables -- ##
+
+pattern1 = "-----------------\n"
+pattern2 = "ooooooooooooooooo\n"
+pattern3 = "xxxxxxxxxxxxxxxxx\n"
+lines = 1
+
+## -- Introduction -- ##
+
+print("My beautiful rug design: ")
+print()
+
+#### ---- DRAW RUG ---- ####
+while lines <= 14:
+    if lines == 1 or lines == 14:
+        print(pattern3)
+    elif lines % 5 == 0:
+        print(pattern1)
+    else:
+        print(pattern2)
+    lines += 1
+
+
+
+
+
+
+
+
+
