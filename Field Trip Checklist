@@ -1,0 +1,31 @@
+"""
+Booleans
+Instruction Practice: Booleans
+Field Trip Checklist
+"""
+
+#### ---- INPUT ---- ####
+
+in_band = input("Are you in the band? (y/n): ") == "y"
+in_choir = input("Are you in the choir? (y/n): ") == "y"
+permission_slip = input("Do you have a signed permission slip? (y/n): ") =="y"
+class_work = input("Are you caught up on class work? (y/n): ") == "y"
+available = input("Are you available next Friday, on the day of the trip? (y/n) ") == "y"
+print()
+
+#### ---- VARIABLE SETUP ---- ####
+
+can_go = True
+if in_band == True or in_choir == True and class_work == True and premisson_slip == True and available == True:
+    can_go = True
+elif not in_band == True or in_choir == True and class_work == True or premisson_slip == True and available == True:
+    can_go = False
+#### ---- ATTENDING LOGIC ---- ####
+
+
+
+
+if can_go == True:
+    print("You can go on the field trip!")
+else:
+    print("Sorry, you can't go on this field trip.  Maybe next time.")
