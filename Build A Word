@@ -1,0 +1,21 @@
+"""
+Libraries
+Instruction Practice: Documentation
+Build A Word
+"""
+
+#### ---- LIBRARY SETUP ---- ####
+import ts_mystery
+
+
+#### ---- OUTPUT ---- ####
+
+
+ts_mystery.mystery1()
+ts_mystery.mystery3()
+ts_mystery.mystery6()
+
+ts_mystery.mystery8()
+
+
+
