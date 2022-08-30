@@ -1,0 +1,36 @@
+"""
+Classes
+Instruction Practice: Classes
+Antique Appraisal
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Import -- ##
+
+import ts_antique
+
+## -- Instance creation -- ##
+
+antique1 = ts_antique.Antique()
+antique2 = ts_antique.Antique()
+antique3 = ts_antique.Antique()
+
+## -- Antique info -- ##
+
+print("Three antiques lay before you.")
+print()
+antique1.show_description()
+antique2.show_description()
+antique3.show_description()
+
+int(input("Which do you think is the most expensive antique? (1, 2, 3): "))
+print()
+
+#### ---- VALUE REVEAL ---- ####
+
+print("The appraised value of each antique is:")
+
+print(antique1.kind + " - " + str(antique1.appraised_value))
+print(antique2.kind + " - " + str(antique2.appraised_value))
+print(antique3.kind + " - " + str(antique3.appraised_value))
