@@ -1,0 +1,36 @@
+"""
+Classes
+Technique Practice: Change an Instance With a Function
+Flight Lobby
+"""
+
+#### ---- SETUP ---- ####
+
+import ts_flight
+
+## -- Flights -- ##
+
+flight1 = ts_flight.Flight("Allied Air", "201", "Dec 20")
+flight2 = ts_flight.Flight("Washington Airlines", "18", "Dec 21")
+
+## -- Passengers -- ##
+
+passenger1 = ts_flight.Passenger("Levi")
+passenger2 = ts_flight.Passenger("Zuzanna")
+passenger3 = ts_flight.Passenger("Sabiah")
+
+#### ---- SCHEDULING ---- ####
+passenger1.flight1 = flight1.add_passenger(passenger1)
+passenger2.flight1 = flight1.add_passenger(passenger2)
+passenger3.flight2 = flight2.add_passenger(passenger3)
+
+
+
+#### ---- OUTPUT ---- ####
+
+print("Passengers' flights")
+print("-------------------")
+
+print(passenger1.name + " is on " + passenger1.flight)
+print(passenger2.name + " is on " + passenger2.flight)
+print(passenger3.name + " is on " + passenger3.flight)
