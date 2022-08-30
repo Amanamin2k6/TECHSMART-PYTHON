@@ -1,0 +1,49 @@
+"""
+Graphics
+Technique Practice: Draw Order
+Spritescape
+"""
+
+#### ---- SETUP ---- ####
+
+import tsapp
+
+window = tsapp.GraphicsWindow()
+
+#### ---- SPRITE CREATION ---- ####
+
+background = tsapp.Sprite("LakeWithBushes.jpg", 0, 0)
+
+right_bush = tsapp.Sprite("Bush.png", 600, 250)
+left_bush = tsapp.Sprite("Bush.png", -200, 210)
+beaver = tsapp.Sprite("Beaver.png", 160, 250)
+
+purple_flower = tsapp.Sprite("DaisyBlossom2.png", 720, 400)
+blue_flower = tsapp.Sprite("ForgetMeNotBlossom2.png", 900, 250)
+
+red_flower = tsapp.Sprite("AnemoneBlossom.png", 300, 420)
+pink_flower = tsapp.Sprite("ForgetMeNotBlossom.png", 200, 240)
+yellow_flower = tsapp.Sprite("SunflowerBlossom.png", 50, 350)
+
+sun = tsapp.Sprite("SunCartoon.png", 300, -130)
+cloud = tsapp.Sprite("Cloud2.png", 220, 0)
+
+#### ---- SCENE CREATION ---- ####
+window.add_object(background)
+window.add_object(sun)
+window.add_object(cloud)
+window.add_object(beaver)
+window.add_object(left_bush)
+window.add_object(right_bush)
+window.add_object(purple_flower)
+window.add_object(blue_flower)
+window.add_object(red_flower)
+window.add_object(pink_flower)
+window.add_object(yellow_flower)
+
+
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+    window.finish_frame()
