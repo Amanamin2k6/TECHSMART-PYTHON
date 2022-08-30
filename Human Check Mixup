@@ -1,0 +1,92 @@
+"""
+Advanced List Operations
+Coding Exercise: Advanced List Operations
+Human Check Mixup
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+
+import tsapp
+import random
+
+## -- Graphics -- ##
+window = tsapp.GraphicsWindow()
+background = tsapp.Sprite("BackgroundGreenPaleLine.jpg", 0, 0)
+window.add_object(background)
+for i in range(5):
+    rectangle = tsapp.Sprite("EmptyButtonPressed.png", 0, 0)
+    rectangle.center = (110 + i * 200, 230)
+    window.add_object(rectangle)
+instructions = tsapp.TextLabel("Roboto-Regular.ttf", 32, 30, 85, window.width - 60, "", tsapp.WHITE)
+window.add_object(instructions)
+
+## -- Correct answers -- ##
+images_file = ["BookIcon.png", "BowIcon.png", "FootballIcon.png", "LightBulbIcon.png", "PineappleIcon.png", "RiceBallIcon.png", "TreeIcon.png", "BottleIcon.png"]
+correct_order = []
+random.shuffle(images_file)
+
+
+
+## -- Starting state -- ##
+for i in range(5):
+    sprite = tsapp.Sprite((images_file[i]),0,0)
+    sprite.center = (110 + i * 200, 230)
+    window.add_object(sprite)
+    correct_order.append(sprite)
+instructions.text = "These sprites are in correct order. Click to continue."
+chosing = False
+chosen = []
+clickable = []
+
+#### ---- MAIN LOOP ---- ####
+while window.is_running:
+
+
+    ## -- Start guessing -- ##
+    if tsapp.was_mouse_pressed() and not chosing:
+        chosing = True
+        instructions.text = "Click the sprites to put them in the correct order."
+        for sprite in correct_order:
+            clickable.append(sprite)
+        random.shuffle(clickable)
+        
+
+
+    ## -- Guess clicking -- ##
+    elif chosing and tsapp.was_mouse_pressed():
+        x, y = tsapp.get_mouse_position()
+        clicked_sprite = False
+        for sprite in clickable:
+            if sprite.is_colliding_point(x, y):
+                clicked_sprite = True
+                sprite_clicked = sprite
+        if clicked_sprite:
+            chosen.append(sprite_clicked)
+            clickable.remove(sprite_clicked)
+
+
+
+
+    ## -- Sprite positioning -- ##
+    for i in range(len(clickable)):
+        clickable[i].center = (110 + i * 200, 430)
+    for i in range(len(chosen)):
+        chosen[i].center = (110 + i * 200, 230)
+
+        
+
+
+    ## -- Answer checking -- ##
+    if chosen == correct_order:
+        instructions.text = "human"
+    elif len(chosen) == len(correct_order):
+        instructions.text = "not human"
+
+
+
+
+    ## -- Window update -- ##
+    window.finish_frame()
+
