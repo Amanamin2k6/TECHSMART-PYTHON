@@ -1,0 +1,25 @@
+"""
+Conditionals (elif and else)
+Instruction Practice: Nested Conditionals
+Compass Helper
+"""
+
+#### ---- INPUT ---- ####
+rising = input("Is the sun a) rising or b) setting? Enter a or b: ")
+direction = input("Is the sun to your a) left or b) right? Enter a or b: ")
+
+
+#### ---- RESPONSE ---- ####
+if rising == "a":
+    if direction == "a":
+        print("The direction is South!")
+    elif direction == "b":
+        print("The direction is North!")
+elif rising == "b":
+    if direction == "a":
+        print("The direction is North!")
+    elif direction == "b":
+        print("The direction is South!")
+else:
+    print("Not an acceptable answer!")
+
