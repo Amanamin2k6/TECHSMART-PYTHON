@@ -1,0 +1,35 @@
+"""
+Controlling Loops
+Instruction Practice: Controlling Loops
+Fire Escape
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+
+import ts_fire_maze
+
+## -- Game setup -- ##
+
+ts_fire_maze.setup_scene()
+at_goal = False
+
+#### ---- GAME LOOP ---- ####
+
+while not at_goal:
+    ts_fire_maze.check_for_move()
+    on_fire = ts_fire_maze.touching_fire()
+
+    ## -- Collision Check -- ##
+    if on_fire:
+        print("LAVA!")
+        break
+
+
+    at_goal = ts_fire_maze.touching_goal()
+
+## -- Success Message -- ##
+else:
+    print("congrats you made it! ")
+
