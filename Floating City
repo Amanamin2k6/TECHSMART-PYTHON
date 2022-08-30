@@ -1,0 +1,26 @@
+"""
+Graphics
+Instruction Practice: Graphics
+Floating City
+"""
+
+#### ---- SETUP ---- ####
+
+import tsapp
+window = tsapp.GraphicsWindow()
+
+#### ---- SPRITE CREATION ---- ####
+background = tsapp.Sprite("EmptySky.png", 0,0)
+cityhall = tsapp.Sprite("MapCityHall.png", 400, 200)
+mapschool = tsapp.Sprite("MapSchool.png", 700, 100)
+
+#### ---- SCENE CREATION ---- ####
+window.add_object(background)
+window.add_object(cityhall)
+window.add_object(mapschool)
+
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+    window.finish_frame()
