@@ -1,0 +1,20 @@
+"""
+Statements and Variables
+Instruction Practice: Variables
+Favorite Things
+"""
+
+#### ---- INPUT ---- ####
+like_food=(input("What is your favorite food? "))
+like_subject=(input("What is your favorite subject? "))
+like_color=(input("What color do you like? "))
+hobby=(input("What is your favorite hobby?"))
+music=(input("what is your favorite type?"))
+
+#### ---- OUTPUT ---- ####
+print("Here is the list of things you like!")
+print(like_food)
+print(like_subject)
+print(like_color)
+print(hobby)
+print(music)
