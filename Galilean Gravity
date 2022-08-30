@@ -1,0 +1,43 @@
+"""
+Animation
+Instruction Practice: Animation
+Galilean Gravity
+"""
+
+#### ---- WINDOW SETUP ---- ####
+
+import tsapp
+window = tsapp.GraphicsWindow()
+
+#### ---- SPRITE SETUP ---- ####
+
+background = tsapp.Sprite("GrassyMeadow.jpg", 0, 0)
+tower = tsapp.Sprite("RockTower.png", 90, 0)
+paper = tsapp.Sprite("RPSPaperSmall.png", 450, 125)
+rock = tsapp.Sprite("RPSRockSmall.png", 550, 150)
+
+#### ---- SCENE CREATION ---- ####
+
+window.add_object(background)
+window.add_object(tower)
+window.add_object(rock)
+window.add_object(paper)
+
+#### ---- FALLING LOGIC ---- ####
+paper.image_animation_rate = 40
+paper.y_speed = 30
+rock.image_animation_rate = 40
+rock.y_speed = 60  
+
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+
+    ## -- Stopping logic -- ##
+    if paper.center_y >= 550:
+        paper.y_speed = 0
+    if rock.center_y >= 550:
+        rock.y_speed = 0
+
+    window.finish_frame()
