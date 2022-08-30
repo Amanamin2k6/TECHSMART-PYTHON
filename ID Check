@@ -1,0 +1,96 @@
+"""
+Lists and For-Each Loops
+Coding Exercise: List Indexes
+ID Check
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+
+import tsapp
+import random
+import ts_license
+
+## -- Introduction -- ##
+print("Please ensure that the ID of each person entering the concert matches the information in our ticket database.")
+print("Find as many pieces of misinformation as you can in 30 seconds.")
+input("(Press enter to begin)")
+print()
+
+## -- Window -- ##
+window = tsapp.GraphicsWindow()
+ts_license.set_up(window)
+
+## -- Variables -- ##
+
+keys = [tsapp.K_1, tsapp.K_2, tsapp.K_3, tsapp.K_4, tsapp.K_5, tsapp.K_SPACE]
+
+score = 0
+new_profile = True
+
+
+#### ---- MAIN LOOP ---- ####
+while window.is_running:
+
+
+    ## -- New profile -- ##
+    if new_profile:
+        new_profile = False
+
+
+        ## -- Correct answer -- ##
+        print()
+        license = ts_license.make_license_profile()
+        ticket = ts_license.make_ticket_profile(license)
+        mismatch = len(keys) - 1
+        for i in range (len(license)):
+            right = license[i]
+            wrong = ticket[i]
+            if right != wrong:
+                mismatch = i
+        
+
+
+        ## -- Profile displays -- ##
+        ts_license.display_license(license)
+        print("Information should match:")
+        out_string = ""
+        for i in range (len(ticket)):
+            label = str(i +1 )
+            out_string += label + ": " + str(ticket[i]) + "    "
+        print(out_string)
+        print("enter the incorrect information (or 'space' for all correct)")
+        
+
+
+    ## -- User guess -- ##
+    for i in range (len(keys)):
+        key = keys[i]
+        if tsapp.was_key_pressed(key):
+            if mismatch == i:
+                print("That's correct!")
+                score += 1
+            else:
+                print("Incorrect.")
+            new_profile = True
+                
+
+
+
+
+
+
+
+
+
+    ## -- Timer -- ##
+    window.finish_frame()
+    if tsapp.get_program_duration() >= 30000:
+        window.is_running = False
+
+
+#### ---- FINAL SCORE ---- ####
+print()
+print("Time's up!")
+print("Thank you for your assistance. You correctly processed " + str(score) + " IDs.")
