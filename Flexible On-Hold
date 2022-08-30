@@ -1,0 +1,29 @@
+"""
+Booleans
+Technique Practice: Flexible Input
+Flexible On-Hold
+"""
+
+#### ---- LIBRARY SETUP ---- ####
+
+import ts_hold_music
+
+#### ---- INTRODUCTION ---- ####
+
+print("Thanks for calling Programmers Paradise!")
+
+#### ---- INPUT ---- ####
+
+answer = input("Would you like to hear some music? ")
+
+#### ---- RESPONSE ---- ####
+
+## -- If yes -- ##
+if answer == "yes" or answer == "Yes" or answer == "YES" or answer == "y" or answer == "Y":
+    ts_hold_music.play()
+
+
+## -- If no -- ##
+else:
+    print("Listen to that sweet sound of silence.")
+
