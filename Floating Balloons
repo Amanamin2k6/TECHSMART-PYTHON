@@ -1,0 +1,51 @@
+"""
+Lists and For-Each Loops
+Instruction Practice: Lists and For-Each Loops
+Floating Balloons
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+
+import tsapp
+
+## -- Sprites -- ##
+
+window = tsapp.GraphicsWindow()
+
+background = tsapp.Sprite("EmptySky.png", 0, 0)
+balloon1 = tsapp.Sprite("BalloonPink.png", 50, 300)
+balloon2 = tsapp.Sprite("BalloonRed.png", 250, 300)
+balloon3 = tsapp.Sprite("BalloonPink.png", 450, 300)
+balloon4 = tsapp.Sprite("BalloonRed.png", 650, 300)
+balloon5 = tsapp.Sprite("BalloonPink.png", 850, 300)
+
+window.add_object(background)
+window.add_object(balloon1)
+window.add_object(balloon2)
+window.add_object(balloon3)
+window.add_object(balloon4)
+window.add_object(balloon5)
+
+## -- Balloon list -- ##
+balloons = [balloon1,balloon2, balloon3, balloon4, balloon5]
+
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+    mouse_x, mouse_y = tsapp.get_mouse_position()
+
+    ## -- Balloon logic -- ##
+    if tsapp.was_mouse_pressed():
+        for balloon in balloons:
+            if balloon.is_colliding_point(mouse_x, mouse_y):
+                balloon.y_speed -= 100
+
+
+
+
+
+    window.finish_frame()
+
