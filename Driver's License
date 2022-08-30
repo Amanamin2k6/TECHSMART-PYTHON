@@ -1,0 +1,14 @@
+"""
+Conditionals (if)
+Instruction Practice: Comparison Operators
+Driver's License
+"""
+
+#### ---- INPUT ---- ####
+age = int(input("What is your age? "))
+
+
+#### ---- RESPONSE ---- ####
+if age >= 16:
+    print("You can get a driver's license! ")
+
