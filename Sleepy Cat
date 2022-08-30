@@ -1,0 +1,33 @@
+"""
+Animation
+Technique Demo: Change Image
+Sleepy Cat
+"""
+
+#### ---- SETUP ---- ####
+import tsapp
+window = tsapp.GraphicsWindow()
+
+#### ---- SPRITES ---- ####
+background = tsapp.Sprite("CatRoom.jpg", 0, 0)
+cat = tsapp.Sprite("CatIdle.png", 330, 100)
+
+window.add_object(background)
+window.add_object(cat)
+
+#### ---- MAIN LOOP ---- ####
+frame = 0
+
+while window.is_running:
+    
+    ## -- Change cat image -- ##
+    if frame == 50:
+        cat.image = "CatTired.png"
+    if frame == 100:
+        cat.image = "CatSleepy.png"
+    
+
+
+    
+    frame += 1
+    window.finish_frame()
