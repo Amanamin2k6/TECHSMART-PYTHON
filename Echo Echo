@@ -1,0 +1,18 @@
+"""
+Libraries
+Instruction Practice: Built-in Libraries
+Echo Echo
+"""
+
+#### ---- SETUP ---- ####
+
+import random
+random = random.randint(2,8)
+word = input("Say something to see how many times it echoes: ")
+word += " "
+
+#### ---- ECHO ---- ####
+print(word * random)
+
+
+
