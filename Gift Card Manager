@@ -1,0 +1,79 @@
+"""
+List Operations
+Coding Exercise: List Operations
+Gift Card Manager
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Starting cards -- ##
+valid = ["ASDF", "1234", "QWER", "ZXCV", "0000"]
+amount = [100, 50, 75, 20, 50]
+
+## -- Intro -- ##
+print("Welcome to the Gift Card service app.")
+
+
+#### ---- MAIN LOOP ---- ####
+while True:
+
+
+    user = input("Enter 'use' to use a card, 'buy' to buy a card, or 'exit' to quit: ")
+
+    ## -- Exiting -- ##
+    if user == "exit":
+        break
+
+
+    ## -- Using a card -- ##
+    if user == "use":
+        card_use = input("Enter the code of the card you want to use: ")
+
+        ## -- Code check -- ##
+        while card_use not in valid:
+            print("Invalid")
+            card_use = input("Enter the code of the card you want to use: ")
+
+
+        ## -- Balance display -- ##
+        amount_in_card = amount[valid.index(card_use)]
+
+        print("Your card's balance is $" + str(amount_in_card))
+        ## -- Spending balance -- ##
+        spend_card = int(input("How much would you like to spend? "))
+        if spend_card > amount_in_card:
+            print("That is more money than you have available.")
+        else:
+            amount_in_card -= spend_card
+            amount[valid.index(card_use)] = amount_in_card
+            
+        print("You have $" + str(amount_in_card) + " left in your card.")
+
+
+
+        ## -- Removing card -- ##
+        if amount_in_card == 0:
+            del amount[valid.index(card_use)]
+            del valid[valid.index(card_use)]
+            print(str(card_use) + " has been removed!")
+
+
+        ## -- Invalid input -- ##
+        
+
+
+    ## -- Adding a new card -- ##
+    if user == "buy":
+
+        card_buy = input("Enter a code for the new card: ")
+        ## -- Code check -- ##
+        while card_buy in valid:
+            print("invalid")
+            card_buy = input("Enter a code for the new card: ")
+
+
+        ## -- Adding card -- ##
+        valid.append(card_buy)
+        amount.append(100)
+        print(str(card_buy) + " has been added with a balance of $100.")
+
