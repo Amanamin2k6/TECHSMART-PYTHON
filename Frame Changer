@@ -1,0 +1,31 @@
+"""
+Lists and For-Each Loops
+Instruction Practice: List Indexes
+Frame Changer
+
+Credit: Art created by jgs at https://www.asciiart.eu/art-and-design/mona-lisa
+"""
+
+#### ---- SETUP ---- ####
+
+## -- List -- ##
+
+lines = ["", "       ______", "     .;;;;;;;;.", "    /;;;;;;;;;;;\\", "   /;/`    `-;;;;; . .", "   |;|__  __  \\;;;|", ".-.|;| e`/e`  |;;;|", "   |;|  |     |;;;|'--", "   |;|  '-    |;;;|", "   |;;\\ --'  /|;;;|", "   |;;;;;---'\\|;;;|", "   |;;;;|     |;;;|", "   |;;.-'     |;;;|", "'--|/`        |;;;|--.", ";;;;    .     ;;;;.\\;;", ";;;;;-.;_    /.-;;;;;;", ";;;;;;;;;;;;;;;;;;;;;;", ";;;;;;;;;;;;;;;;;;;;;;", "", ""]
+
+## -- Frame -- ##
+frame = ""
+for i in range (11):
+    frame += "+="
+    
+#### ---- OUTPUT ---- ####
+
+## -- Intro -- ##
+
+print("Behold, the beautiful Mona Lisa:")
+print()
+print(frame)
+## -- Art -- ##
+
+for line in lines:
+    print(line)
+print(frame)
