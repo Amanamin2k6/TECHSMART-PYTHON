@@ -1,0 +1,17 @@
+"""
+Libraries
+Instruction Practice: Documentation
+Automated Trainer
+"""
+
+#### ---- LIBRARY SETUP ---- ####
+import ts_workout
+
+
+#### ---- WORKOUT OUTPUT ---- ####
+
+ts_workout.warmup()
+ts_workout.pushups("10")
+ts_workout.plank("20")
+ts_workout.squats("5","10")
+ts_workout.cooldown()
