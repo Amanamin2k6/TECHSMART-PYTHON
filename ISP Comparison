@@ -1,0 +1,44 @@
+"""
+Nested Collections
+Technique Practice: Iterating over Nested Collections
+ISP Comparison
+"""
+
+#### ---- INTRO ---- ####
+
+print("Internet Service Provider (ISP) GigaLink advertises that its")
+print("download speed is above 40 Mbps 80% of the time. Is GigaLink's")
+print("speed better than the average ISP?")
+print()
+
+#### ---- SPEED TEST DATA ---- ####
+
+isp_speed_data = [
+  {
+   "Company": "Unfinity",
+   "Speed test results": [42, 41, 35, 40, 43, 42, 37]
+  }, {
+   "Company": "Zipcast",
+   "Speed test results": [44, 48, 45, 45, 40, 43, 42]
+  }, {
+   "Company": "EZ&Z",
+   "Speed test results": [41, 34, 33, 41, 40, 39, 33]
+  }
+]
+
+## -- Variable setup -- ##
+
+good_speed = 0
+total_tests = 0
+
+## -- Test results check -- ##
+
+
+
+## -- Percentage calculation -- ##
+
+good_speed_percentage = int(good_speed / total_tests * 100)
+
+## -- Display result -- ##
+
+print("Competing ISPs had speed test results above 40 Mbps " + str(good_speed_percentage) + "% of the time.")
