@@ -1,0 +1,42 @@
+"""
+Classes
+Technique Demo: Change an Instance with a Function
+Stay Alive
+"""
+
+import ts_game
+
+# Print instructions
+print("Choose which of two possible doors to walk through. Be careful, though, as opening some doors is dangerous and will hurt you!")
+
+# Create the player instance and a count variable
+player = ts_game.Player()
+count = 0
+
+# Open doors until the player is out of lives
+while player.lives > 0:
+
+    # Print the player's health and lives
+    print()
+    print("Your health: " + str(player.health))
+    print("Your remaining lives: " + str(player.lives))
+
+    # Create two new doors
+    door1 = ts_game.Door()
+    door2 = ts_game.Door()
+    
+    # Ask which door the user chooses
+    choice = input("Two doors appear before you. Which door do you want to open, 1 or 2? ")
+    count += 1
+
+    # Open whichever door the user chose
+    if choice == "1":
+        ts_game.open_door(player,door1)
+    else:
+        ts_game.open_door(player,door2)
+
+
+
+
+print()
+print("That was your last life! You opened a total of " + str(count) + " doors.")
