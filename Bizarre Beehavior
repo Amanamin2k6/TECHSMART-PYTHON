@@ -1,0 +1,49 @@
+"""
+Interaction
+Instruction Practice: Collision
+Bizarre Beehavior
+"""
+
+#### ---- SETUP ---- ####
+
+import tsapp
+import random
+
+window = tsapp.GraphicsWindow()
+
+#### ---- SPRITES ---- ####
+
+background = tsapp.Sprite("Forest.jpg", 0, 0)
+bee = tsapp.Sprite("Bee.png", 100, 200)
+pug = tsapp.Sprite("Pug.png", 300, 400)
+bee.y_speed = random.randint(-200, -150)
+bee.x_speed = random.randint(150, 200)
+pug.x_speed = 150
+
+#### ---- SCENE CREATION ---- ####
+
+window.add_object(background)
+window.add_object(bee)
+window.add_object(pug)
+
+#### ---- MAIN LOOP ---- ####
+
+while window.is_running:
+
+    if pug.x > 800 or pug.x < 50:
+        pug.flip_x = not pug.flip_x
+        pug.x_speed = -pug.x_speed
+    if bee.x > 800 or bee.x < 50:
+        bee.x_speed = -bee.x_speed
+    elif bee.y > 400 or bee.y < 10:
+        bee.y_speed = -bee.y_speed
+
+    ## -- Collision -- ##
+    if bee.is_colliding_rect(pug):
+        bee.image = "PugBee.png"
+        pug.image = "PugBee.png"
+
+
+
+
+    window.finish_frame()
