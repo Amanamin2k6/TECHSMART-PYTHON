@@ -1,0 +1,78 @@
+"""
+Classes
+Coding Exercise: Classes
+Custom Challenge
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Library -- ##
+import ts_cars
+
+
+## -- Car body -- ##
+color = input("Choose a blue, yellow, or purple car: ")
+custom_car = ts_cars.Car(color)
+custom_car.draw_car()
+
+points = 4
+
+
+
+#### ---- CUSTOMIZE ---- ####
+
+## -- Instructions -- ##
+while points > 0:
+
+
+
+
+    ## -- Part points -- ##
+    custom_car.print_stats()
+    print("You have " + str(points) + " points to spend!")
+    print("What part would you like to put a point into?")    
+    choice = input("engine (e), exhaust (x), wheels (w), nitro (n)")
+    print()
+    
+    if choice == "e" and custom_car.engine_points < 3:
+        custom_car.engine_points += 1
+        points -= 1
+    elif choice == "x" and custom_car.pipe_points < 3:
+        custom_car.pipe_points += 1
+        points -= 1
+    elif choice == "w" and custom_car.wheel_points < 3:
+        custom_car.wheel_points += 1
+        points -= 1
+    elif choice == "n" and custom_car.nitro_points < 3:
+        custom_car.nitro_points += 1
+        points -= 1
+    else:
+        print("Please choose a valid category. Each category can have no more than 3 points.")
+        print()
+        continue
+    
+
+    ## -- Car update -- ##
+    custom_car.draw_car()
+
+
+## -- Final stats -- ##
+print("---------FINAL STATS-----------")
+custom_car.print_stats()
+
+
+#### ---- RACE ---- ####
+
+## -- Intro -- ##
+print("Ready to Race!")
+input("Press enter to begin: ")
+
+
+## -- Opponents -- ##
+car2 = ts_cars.Car()
+car2.assign_random_stats()
+car3 = ts_cars.Car()
+car3.assign_random_stats()
+## -- Race animation -- ##
+ts_cars.show_race(custom_car, car2, car3)
+
