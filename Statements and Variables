@@ -1,0 +1,19 @@
+"""
+Statements and Variables
+Instruction Practice: Statements
+Label Maker
+"""
+
+#### ---- OUTPUT ---- ####
+
+## -- Framed Initials -- ##
+
+print("________________________________________")
+print("|* * * * * * * * * * * * * * * * * *  *|")
+print("|*                                    *|")
+print("|*            /\        /\            *|")
+print("|*           /  \      /  \           *|")
+print("|*          /____\    /____\          *|")
+print("|*         /      \  /      \         *|")
+print("|*____________________________________*|")
+print("")
