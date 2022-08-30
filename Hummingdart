@@ -1,0 +1,90 @@
+"""
+Animation
+Coding Exercise: Animation
+Hummingdart
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+import tsapp
+import random
+import math
+
+## -- Window and sprites -- ##
+window = tsapp.GraphicsWindow()
+bg = tsapp.Sprite("OpenMeadow.jpg", 0, 0)
+bird = tsapp.Sprite("Hummingbird.png", 50, 0)
+tree = tsapp.Sprite("Tree.png", 600, 0)
+nest = tsapp.Sprite("BirdNest.png", 0, 0)
+
+
+
+
+
+## -- Sprite scale -- ##
+tree.scale = .8
+bird.scale = .4
+nest.scale = .2
+
+## -- Sprite positions -- ##
+bird.y = random.randint(100,400)
+nest.y = random.randint(65,225)
+nest.x = random.randint(650,950)
+bird_y_start = bird.y
+
+
+
+
+## -- Scene creation -- ##
+window.add_object(bg)
+window.add_object(tree)
+window.add_object(nest)
+window.add_object(bird)
+
+
+## -- First frame -- ##
+
+window.finish_frame()
+
+
+print("help the bird get home")
+
+#### ---- MAIN LOOP ---- ####
+while window.is_running:
+
+
+    ## -- Speeds -- ##
+    if bird.x_speed == 0 and bird.y_speed == 0:
+        y_speed = int(input("Enter a vertical speed: "))
+        x_speed = int(input("Enter a horizontal speed: "))
+        window.finish_frame()
+        bird.y_speed = y_speed
+        bird.x_speed = x_speed
+        
+        
+        
+
+    ## -- Distance formula -- ##
+    x_distance = bird.center_x - nest.center_x
+    y_distance = bird.center_y - nest.center_y
+    distance = math.sqrt(x_distance ** 2 + y_distance ** 2)
+
+
+    ## -- Win condition -- ##
+    if distance < 50:
+        print("home sweet home!")
+        break
+
+
+    ## -- Reset condition -- ##
+    if bird.x < 0 or bird.x > window.width or bird.y < 0 or bird.y > window.height:
+        print("Ohh no ... you missed!")
+        bird.x = 50
+        bird.y = bird_y_start
+        bird.x_speed = 0
+        bird.y_speed = 0
+    window.finish_frame()
+
+
+
