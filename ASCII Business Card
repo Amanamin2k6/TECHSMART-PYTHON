@@ -1,0 +1,22 @@
+"""
+Statements and Variables
+Instruction Practice: Variables
+ASCII Business Card
+"""
+
+#### ---- INPUT ---- ####
+first_name=(input("What is your first name? "))
+last_name=(input("What is your last name? "))
+dream_job=(input("What is your dream job? "))
+phone_number=(input("What is your number"))
+
+
+
+
+#### ---- OUTPUT ---- ####
+print("^^^^^^^^^^")
+print(first_name)
+print(last_name)
+print(dream_job)
+print(phone_number)
+print("vvvvvvvvvv")
