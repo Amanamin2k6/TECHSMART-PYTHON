@@ -1,0 +1,39 @@
+"""
+While Loops
+Coding Exercise: While Loops
+MappApp
+"""
+
+#### ---- SETUP ---- ####
+
+## -- Libraries -- ##
+import ts_map
+import random
+
+## -- Destination -- ##
+x = random.randint(-2, 4)
+y = random.randint(-2, 4)
+ts_map.set_destination(x, y)
+at_destination = False
+step = 1
+#### ---- NAVIGATION LOOP ---- ####
+while not at_destination:
+
+
+    ## -- Next direction -- ##
+    direction = ts_map.get_next_direction()
+    distance = ts_map.get_next_distance(direction)
+
+    ## -- Movement -- ##
+    ts_map.move_map(step, direction, distance)
+    step += 1
+
+    ## -- Arrival check -- ##
+    at_destination = ts_map.goal_reached()
+
+
+#### ---- FINAL OUTPUT ---- ####
+print("Thank you for using MappApp")
+input("what would you like to rate this app? 1-5 ")
+print("Thank you for your feedback!")
+
